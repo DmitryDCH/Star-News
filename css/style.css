@@ -77,16 +77,19 @@ hr{
     border-bottom: 3px solid #000;
 }
 main{
-    min-height: 800px;
+    min-height: 850px;
+    margin-top: 30px;
 }
 .random_news{
-    min-height: 800px;
+    min-height: 900px;
+}
+.random_news{
+    min-height: 300px;
 }
 .user_click_news{
-    min-height: 800px;
+    min-height: 900px;
     border-left: 2px solid black;
     border-right: 2px solid black;
-    border-top:  2px solid black;
 }
 /*footer*/
 footer{
@@ -106,4 +109,8 @@ footer{
 }
 .random_news_list{
     height: 800px;
+}
+.text_style{
+    color: black;
+    font-size: 19px;
 }

@@ -42,21 +42,177 @@ function Request(category, apikey, callback){
 }
 
 function businessNews(news){
-    console.log("businessNews", news);
+    show_business(news);
 }
 function entertaimentNews(news){
-    console.log("EntertaimentNews", news);
+    show_entertaim(news);
 }
 function healthNews(news){
-    console.log("HealthNews", news);
+    show_health(news);
 }
 function scienceNews(news){
-    console.log("scienceNews", news);
+    //console.log("scienceNews", news);
+    show_science(news);
 }
 function technologyNews(news){
-    console.log("technologyNews",news);
+    show_tech(news);
+}
+/* put inner HTML */
+function show_business(news){
+    /* try math_random */
+    var root_business = document.querySelector(".user_news_root");
+    var title = document.createElement("h2");
+
+    title.innerHTML = "Business section";
+    title.style = "text-transform: uppercase; text-align:center";
+
+
+    root_business.appendChild(title);
+    for(var i = 0; i < 5; i++){
+        var news_group = document.createElement("div");
+        var news_img = document.createElement("img");
+        var news_link = document.createElement("a");
+    
+        news_img.setAttribute("src", news.articles[i].urlToImage);
+        news_img.setAttribute("alt", "news_img");
+        news_img.style = "height = 150px; width: 150px; margin: 0 auto;"
+        
+        news_group.setAttribute("style","text-align:center");
+        news_group.className = "d-flex flex-column justify-content-around";
+
+        news_link.innerText = news.articles[i].title + " (click)";
+        news_link.setAttribute("href", news.articles[i].url);
+        news_link.setAttribute("target","_blank");
+        news_link.className = "text_style";
+    
+        root_business.appendChild(news_group);
+        news_group.appendChild(news_img);
+        news_group.appendChild(news_link);
+    }
 }
 
+function show_entertaim(news){
+    //console.log("works");
+    var root_business = document.querySelector(".random_news_root");
+    
+    var title = document.createElement("h2");
+
+    title.innerHTML = "Entertaiment Section";
+
+    title.style = "text-align:center";
+
+    root_business.appendChild(title);
+
+    for(var i = 0; i < 4; i++){
+        var news_group = document.createElement("div");
+        var news_img = document.createElement("img");
+        var news_link = document.createElement("a");
+    
+        news_img.setAttribute("src", news.articles[i].urlToImage);
+        news_img.setAttribute("alt", "news_img");
+        news_img.style = "height = 150px; width: 150px; margin: 0 auto;"
+        
+        news_group.setAttribute("style","text-align:center");
+        news_group.className = "d-flex flex-column justify-content-around";
+
+        news_link.innerText = news.articles[i].title + " (деталіше)";
+        news_link.setAttribute("href", news.articles[i].url);
+        news_link.setAttribute("target","_blank");
+        news_link.className = "text_style";
+    
+        root_business.appendChild(news_group);
+        news_group.appendChild(news_img);
+        news_group.appendChild(news_link);
+    }
+}
+
+function show_health(news){
+    //console.log("works");
+    var root_business = document.querySelector(".random_news_root2");
+
+    var title = document.createElement("h2");
+
+    title.innerHTML = "Health Section";
+
+    title.style = "text-align:center";
+
+    root_business.appendChild(title);
+
+    for(var i = 0; i < 4; i++){
+        var news_group = document.createElement("div");
+        var news_img = document.createElement("img");
+        var news_link = document.createElement("a");
+    
+        news_img.setAttribute("src", news.articles[i].urlToImage);
+        news_img.setAttribute("alt", "news_img");
+        news_img.style = "height = 150px; width: 150px; margin: 0 auto;"
+        
+        news_group.setAttribute("style","text-align:center");
+        news_group.className = "d-flex flex-column justify-content-around";
+
+        news_link.innerText = news.articles[i].title + " (деталіше)";
+        news_link.setAttribute("href", news.articles[i].url);
+        news_link.setAttribute("target","_blank");
+        news_link.className = "text_style";
+    
+        root_business.appendChild(news_group);
+        news_group.appendChild(news_img);
+        news_group.appendChild(news_link);
+    }
+}
+function show_science(news){
+    var root_business = document.querySelector(".random_news_root3");
+    root_business.style = "border-top: 3px solid black";
+    
+    for(var i = 0; i < 4; i++){
+        var news_group = document.createElement("div");
+        var news_img = document.createElement("img");
+        var news_link = document.createElement("a");
+    
+        news_img.setAttribute("src", news.articles[i].urlToImage);
+        news_img.setAttribute("alt", "news_img");
+        news_img.style = "height = 150px; width: 150px; margin: 0 auto;"
+        
+        news_group.setAttribute("style","text-align:center");
+        news_group.className = "d-flex flex-column justify-content-around";
+
+        news_link.innerText = news.articles[i].title + " (деталіше)";
+        news_link.setAttribute("href", news.articles[i].url);
+        news_link.setAttribute("target","_blank");
+        news_link.className = "text_style";
+    
+        root_business.appendChild(news_group);
+        news_group.appendChild(news_img);
+        news_group.appendChild(news_link);
+    }
+}
+
+function show_tech(news){
+    var root_business = document.querySelector(".random_news_root4");
+    root_business.style = "border-top: 3px solid black";
+    
+    for(var i = 0; i < 4; i++){
+        var news_group = document.createElement("div");
+        var news_img = document.createElement("img");
+        var news_link = document.createElement("a");
+    
+        news_img.setAttribute("src", news.articles[i].urlToImage);
+        news_img.setAttribute("alt", "news_img");
+        news_img.style = "height = 150px; width: 150px; margin: 0 auto;"
+        
+        news_group.setAttribute("style","text-align:center");
+        news_group.className = "d-flex flex-column justify-content-around";
+
+        news_link.innerText = news.articles[i].title + " (деталіше)";
+        news_link.setAttribute("href", news.articles[i].url);
+        news_link.setAttribute("target","_blank");
+        news_link.className = "text_style";
+    
+        root_business.appendChild(news_group);
+        news_group.appendChild(news_img);
+        news_group.appendChild(news_link);
+    }
+}
 
 
 
