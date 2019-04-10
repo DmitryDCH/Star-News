@@ -162,7 +162,7 @@ function show_health(news){
 }
 function show_science(news){
     var root_business = document.querySelector(".random_news_root3");
-    root_business.style = "border-top: 3px solid black";
+    root_business.style = "border-top: 3px solid black; border-radius: 15%";
     
     for(var i = 0; i < 4; i++){
         var news_group = document.createElement("div");
@@ -189,7 +189,7 @@ function show_science(news){
 
 function show_tech(news){
     var root_business = document.querySelector(".random_news_root4");
-    root_business.style = "border-top: 3px solid black";
+    root_business.style = "border-top: 3px solid black; border-radius: 15%;";
     
     for(var i = 0; i < 4; i++){
         var news_group = document.createElement("div");
