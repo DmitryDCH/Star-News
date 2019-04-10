@@ -56,3 +56,27 @@ function scienceNews(news){
 function technologyNews(news){
     console.log("technologyNews",news);
 }
+
+
+
+
+
+/* UI scripts */
+function hide_inp(){
+    var input_search = document.querySelector(".input_search");
+    var button_search = document.querySelector(".search_button");
+    var text = document.querySelector(".text");
+
+    var class_search = input_search.getAttribute("class");
+
+    if(class_search == "input_search d-none"){
+        input_search.setAttribute("class", "input_search d-block");
+        button_search.setAttribute("class", "btn btn-success search_button d-block");
+        text.setAttribute("class", "text d-none");
+    } else{
+        input_search.setAttribute("class", "input_search d-none");
+        button_search.setAttribute("class", "btn btn-success search_button d-none");
+        text.setAttribute("class", "text d-block");
+    }
+}
+

@@ -5,11 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Star-news</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <div class="wrapper">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="logo d-flex align-items-center justify-content-center">
+                            <img src="img/NEW_Star_News_Group_Logo_RGB.png" alt="logo" class="logo_img">
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="search_wrapper d-flex justify-content-start align-items-center">
+                            <i class="fas fa-search rubberBand" onclick="hide_inp()"></i>
+                            <span class="text"><i class="far fa-hand-point-left"></i> Click on this icon for <span>"search".</span></span>
+                            <input type="text" name="search" class="input_search d-none">
+                            <button class="btn btn-success search_button d-none">Send</button>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 d-flex flex-column">
+                        <div class="title d-flex justify-content-center align-items-center">
+                            <i class="fas fa-hand-spock"></i>
+                            <span class="title_text">Like us in your social</span>
+                            <i class="fas fa-hand-spock"></i>
+                        </div>
+                        <div class="social d-flex justify-content-around align-items-start">
+                            <i class="fab fa-twitter-square"></i>
+                            <i class="fab fa-facebook-square"></i>
+                            <i class="fab fa-google-plus-square"></i>
+                            <i class="fab fa-pinterest-square"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="row">
+                    <div class="col-12">
+                            <div class="navigation">
+                                <ul class="list_nav d-flex align-items-center justify-content-around">
+                                    <li>Business-News</li>
+                                    <li>Entertaiment-News</li>
+                                    <li>Health-News</li>
+                                    <li>Science-News</li>
+                                    <li>Technology-News</li>
+                                </ul>
+                            </div>
+                    </div>
+            </div>
+        </div>
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-3">
+                        <div class="random_news">
+                            <div class="random_news_root d-flex justify-content-around align-items-center flex-column">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="user_click_news">
+                            <div class="user_news_root d-flex flex-column  align-items-center justify-content-around">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3">
+                        <div class="random_news">
+                                <div class="random_news_root2 d-flex justify-content-around align-items-center flex-column">
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="container-fluid bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="copy_write d-flex justify-content-center align-items-center">
+                                <span class="text_copy">
+                                    CopyWrite 2019
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>
