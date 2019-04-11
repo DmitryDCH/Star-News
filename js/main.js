@@ -1,7 +1,5 @@
 window.addEventListener("load", init);
 function init(){
-    /* My Hurd Code then push into third branch and 
-    merge with DEV and create pretty UI */
     var apikey = "b426b1761d53466c9ca16514d9a564d8";
     var category = ["business", "entertainment", "health", "science", "technology"];
 
@@ -51,7 +49,6 @@ function healthNews(news){
     show_health(news);
 }
 function scienceNews(news){
-    //console.log("scienceNews", news);
     show_science(news);
 }
 function technologyNews(news){
@@ -59,13 +56,11 @@ function technologyNews(news){
 }
 /* put inner HTML */
 function show_business(news){
-    /* try math_random */
     var root_business = document.querySelector(".user_news_root");
     var title = document.createElement("h2");
 
     title.innerHTML = "Business section";
     title.style = "text-transform: uppercase; text-align:center";
-
 
     root_business.appendChild(title);
     for(var i = 0; i < 5; i++){
@@ -92,8 +87,7 @@ function show_business(news){
 }
 
 function show_entertaim(news){
-    //console.log("works");
-    var root_business = document.querySelector(".random_news_root");
+    var root_entertaim = document.querySelector(".random_news_root");
     
     var title = document.createElement("h2");
 
@@ -101,7 +95,7 @@ function show_entertaim(news){
 
     title.style = "text-align:center";
 
-    root_business.appendChild(title);
+    root_entertaim.appendChild(title);
 
     for(var i = 0; i < 4; i++){
         var news_group = document.createElement("div");
@@ -120,15 +114,14 @@ function show_entertaim(news){
         news_link.setAttribute("target","_blank");
         news_link.className = "text_style";
     
-        root_business.appendChild(news_group);
+        root_entertaim.appendChild(news_group);
         news_group.appendChild(news_img);
         news_group.appendChild(news_link);
     }
 }
 
 function show_health(news){
-    //console.log("works");
-    var root_business = document.querySelector(".random_news_root2");
+    var root_health = document.querySelector(".random_news_root2");
 
     var title = document.createElement("h2");
 
@@ -136,7 +129,7 @@ function show_health(news){
 
     title.style = "text-align:center";
 
-    root_business.appendChild(title);
+    root_health.appendChild(title);
 
     for(var i = 0; i < 4; i++){
         var news_group = document.createElement("div");
@@ -155,14 +148,14 @@ function show_health(news){
         news_link.setAttribute("target","_blank");
         news_link.className = "text_style";
     
-        root_business.appendChild(news_group);
+        root_health.appendChild(news_group);
         news_group.appendChild(news_img);
         news_group.appendChild(news_link);
     }
 }
 function show_science(news){
-    var root_business = document.querySelector(".random_news_root3");
-    root_business.style = "border-top: 3px solid black; border-radius: 15%";
+    var root_science = document.querySelector(".random_news_root3");
+    root_science.style = "border-top: 3px solid black; border-radius: 5%";
     
     for(var i = 0; i < 4; i++){
         var news_group = document.createElement("div");
@@ -181,15 +174,15 @@ function show_science(news){
         news_link.setAttribute("target","_blank");
         news_link.className = "text_style";
     
-        root_business.appendChild(news_group);
+        root_science.appendChild(news_group);
         news_group.appendChild(news_img);
         news_group.appendChild(news_link);
     }
 }
 
 function show_tech(news){
-    var root_business = document.querySelector(".random_news_root4");
-    root_business.style = "border-top: 3px solid black; border-radius: 15%;";
+    var root_tech = document.querySelector(".random_news_root4");
+    root_tech.style = "border-top: 3px solid black; border-radius: 5%;";
     
     for(var i = 0; i < 4; i++){
         var news_group = document.createElement("div");
@@ -208,7 +201,7 @@ function show_tech(news){
         news_link.setAttribute("target","_blank");
         news_link.className = "text_style";
     
-        root_business.appendChild(news_group);
+        root_tech.appendChild(news_group);
         news_group.appendChild(news_img);
         news_group.appendChild(news_link);
     }
