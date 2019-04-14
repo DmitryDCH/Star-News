@@ -34,3 +34,10 @@ header{
     font-weight: lighter;
     color: gray;
 }
+.table_curse{
+    margin-top: 10px;
+    text-align: center;
+}
+.btn_wrapper{
+    margin-top: 10px;
+}
