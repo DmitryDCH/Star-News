@@ -1,7 +1,5 @@
 window.addEventListener("load", init);
 function init(){
-    /* My Hurd Code then push into third branch and 
-    merge with DEV and create pretty UI */
     var apikey = "b426b1761d53466c9ca16514d9a564d8";
     var category = ["business", "entertainment", "health", "science", "technology"];
 
@@ -42,41 +40,174 @@ function Request(category, apikey, callback){
 }
 
 function businessNews(news){
-    console.log("businessNews", news);
+    //console.log("businessNews", news);
+
+    var news_root = document.querySelector(".business_news");
+
+    var title = document.createElement("h3");
+    title.innerHTML = " Business News";
+    title.style.textAlign = "center";
+
+    news_root.appendChild(title);
+   for(var i = 0; i < 3; i++){
+        var author = document.createElement("span");
+        author.innerHTML = news.articles[i].author;
+        author.className = "author";
+
+        if(news.articles[i].author == null){
+            author.innerHTML = "(author anonim)";
+        }
+
+        var time = document.createElement("span");
+        time.innerHTML = news.articles[i].publishedAt;
+        time.className = "time";
+
+        var description = document.createElement("a");
+        description.innerHTML =  news.articles[i].title;
+        description.className = "news";
+        description.setAttribute("href",  news.articles[i].url);
+        description.style.marginTop = "10px";
+
+        news_root.appendChild(description);
+        news_root.appendChild(author);
+        news_root.appendChild(time);
+   }
 }
 function entertaimentNews(news){
-    console.log("EntertaimentNews", news);
+    //console.log("EntertaimentNews", news);
+
+    var news_root = document.querySelector(".entertaiment_news");
+
+    var title = document.createElement("h3");
+    title.innerHTML = " Entertaiment News";
+    title.style.textAlign = "center";
+
+    news_root.appendChild(title);
+   for(var i = 0; i < 3; i++){
+        var author = document.createElement("span");
+        author.innerHTML = news.articles[i].author;
+        author.className = "author";
+
+        if(news.articles[i].author == null){
+            author.innerHTML = "(author anonim)";
+        }
+
+        var time = document.createElement("span");
+        time.innerHTML = news.articles[i].publishedAt;
+        time.className = "time";
+
+        var description = document.createElement("a");
+        description.innerHTML =  news.articles[i].title;
+        description.className = "news";
+        description.setAttribute("href",  news.articles[i].url);
+        description.style.marginTop = "10px";
+
+        news_root.appendChild(description);
+        news_root.appendChild(author);
+        news_root.appendChild(time);
+   }
 }
 function healthNews(news){
-    console.log("HealthNews", news);
-}
-function scienceNews(news){
-    console.log("scienceNews", news);
-}
-function technologyNews(news){
-    console.log("technologyNews",news);
-}
+    //console.log("HealthNews", news);
 
+    var news_root = document.querySelector(".health_news");
 
+    var title = document.createElement("h3");
+    title.innerHTML = "Health News";
+    title.style.textAlign = "center";
 
+    news_root.appendChild(title);
+   for(var i = 0; i < 3; i++){
+        var author = document.createElement("span");
+        author.innerHTML = news.articles[i].author;
+        author.className = "author";
 
+        if(news.articles[i].author == null){
+            author.innerHTML = "(author anonim)";
+        }
 
-/* UI scripts */
-function hide_inp(){
-    var input_search = document.querySelector(".input_search");
-    var button_search = document.querySelector(".search_button");
-    var text = document.querySelector(".text");
+        var time = document.createElement("span");
+        time.innerHTML = news.articles[i].publishedAt;
+        time.className = "time";
 
-    var class_search = input_search.getAttribute("class");
+        var description = document.createElement("a");
+        description.innerHTML =  news.articles[i].title;
+        description.className = "news";
+        description.setAttribute("href",  news.articles[i].url);
+        description.style.marginTop = "10px";
 
-    if(class_search == "input_search d-none"){
-        input_search.setAttribute("class", "input_search d-block");
-        button_search.setAttribute("class", "btn btn-success search_button d-block");
-        text.setAttribute("class", "text d-none");
-    } else{
-        input_search.setAttribute("class", "input_search d-none");
-        button_search.setAttribute("class", "btn btn-success search_button d-none");
-        text.setAttribute("class", "text d-block");
+        news_root.appendChild(description);
+        news_root.appendChild(author);
+        news_root.appendChild(time);    
     }
 }
+function scienceNews(news){
+    //console.log("scienceNews", news);
+
+    var news_root = document.querySelector(".science_news");
+
+    var title = document.createElement("h3");
+    title.innerHTML = " Science News";
+    title.style.textAlign = "center";
+
+    news_root.appendChild(title);
+   for(var i = 0; i < 3; i++){
+        var author = document.createElement("span");
+        author.innerHTML = news.articles[i].author;
+        author.className = "author";
+
+        if(news.articles[i].author == null){
+            author.innerHTML = "(author anonim)";
+        }
+
+        var time = document.createElement("span");
+        time.innerHTML = news.articles[i].publishedAt;
+        time.className = "time";
+
+        var description = document.createElement("a");
+        description.innerHTML =  news.articles[i].title;
+        description.className = "news";
+        description.setAttribute("href",  news.articles[i].url);
+        description.style.marginTop = "10px";
+
+        news_root.appendChild(description);
+        news_root.appendChild(author);
+        news_root.appendChild(time);
+    }
+}
+function technologyNews(news){
+   // console.log("technologyNews",news);
+
+   var news_root = document.querySelector(".technology_news");
+
+   var title = document.createElement("h3");
+   title.innerHTML = " Technology News";
+   title.style.textAlign = "center";
+
+   news_root.appendChild(title);
+  for(var i = 0; i < 3; i++){
+       var author = document.createElement("span");
+       author.innerHTML = news.articles[i].author;
+       author.className = "author";
+
+       if(news.articles[i].author == null){
+           author.innerHTML = "(author anonim)";
+       }
+
+       var time = document.createElement("span");
+       time.innerHTML = news.articles[i].publishedAt;
+       time.className = "time";
+
+       var description = document.createElement("a");
+       description.innerHTML =  news.articles[i].title;
+       description.className = "news";
+       description.setAttribute("href",  news.articles[i].url);
+       description.style.marginTop = "10px";
+
+       news_root.appendChild(description);
+       news_root.appendChild(author);
+       news_root.appendChild(time);
+   }
+}
+
 
