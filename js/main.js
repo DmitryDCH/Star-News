@@ -40,21 +40,26 @@ function Request(category, apikey, callback){
 }
 
 function businessNews(news){
-    show_business(news);
+    console.log(news);
 }
+
 function entertaimentNews(news){
-    show_entertaim(news);
+    console.log(news);
 }
+
 function healthNews(news){
-    show_health(news);
+    console.log(news);
 }
+
 function scienceNews(news){
-    show_science(news);
+    console.log(news);
 }
+
 function technologyNews(news){
-    show_tech(news);
+    console.log(news);
 }
-/* put inner HTML */
+
+/*
 function show_business(news){
     var root_business = document.querySelector(".user_news_root");
     var title = document.createElement("h2");
@@ -131,7 +136,7 @@ function show_health(news){
 
     root_health.appendChild(title);
 
-    for(var i = 0; i < 4; i++){
+    for(var i = 0; i < 3; i++){
         var news_group = document.createElement("div");
         var news_img = document.createElement("img");
         var news_link = document.createElement("a");
@@ -206,7 +211,7 @@ function show_tech(news){
         news_group.appendChild(news_link);
     }
 }
-
+*/
 
 
 
