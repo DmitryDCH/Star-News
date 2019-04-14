@@ -49,7 +49,7 @@ function businessNews(news){
     title.style.textAlign = "center";
 
     news_root.appendChild(title);
-   for(var i = 0; i < 3; i++){
+   for(var i = 0; i < 4; i++){
         var author = document.createElement("span");
         author.innerHTML = news.articles[i].author;
         author.className = "author";
@@ -59,20 +59,22 @@ function businessNews(news){
         }
 
         var time = document.createElement("span");
+        
         time.innerHTML = news.articles[i].publishedAt;
         time.className = "time";
-
+    
         var description = document.createElement("a");
         description.innerHTML =  news.articles[i].title;
         description.className = "news";
         description.setAttribute("href",  news.articles[i].url);
         description.setAttribute("target", "_blank");
         description.style.marginTop = "10px";
+        description.style.fontWeight = "bold";
 
         news_root.appendChild(description);
         news_root.appendChild(author);
         news_root.appendChild(time);
-   }
+    }
 }
 
 function entertaimentNews(news){
@@ -84,7 +86,7 @@ function entertaimentNews(news){
     title.style.textAlign = "center";
 
     news_root.appendChild(title);
-   for(var i = 0; i < 3; i++){
+   for(var i = 0; i < 4; i++){
         var author = document.createElement("span");
         author.innerHTML = news.articles[i].author;
         author.className = "author";
@@ -103,6 +105,7 @@ function entertaimentNews(news){
         description.setAttribute("href",  news.articles[i].url);
         description.setAttribute("target", "_blank");
         description.style.marginTop = "10px";
+        description.style.fontWeight = "bold";
 
         news_root.appendChild(description);
         news_root.appendChild(author);
@@ -119,7 +122,7 @@ function healthNews(news){
     title.style.textAlign = "center";
 
     news_root.appendChild(title);
-   for(var i = 0; i < 3; i++){
+   for(var i = 0; i < 4; i++){
         var author = document.createElement("span");
         author.innerHTML = news.articles[i].author;
         author.className = "author";
@@ -138,6 +141,7 @@ function healthNews(news){
         description.setAttribute("href",  news.articles[i].url);
         description.setAttribute("target", "_blank");
         description.style.marginTop = "10px";
+        description.style.fontWeight = "bold";
 
         news_root.appendChild(description);
         news_root.appendChild(author);
@@ -154,7 +158,7 @@ function scienceNews(news){
     title.style.textAlign = "center";
 
     news_root.appendChild(title);
-   for(var i = 0; i < 3; i++){
+   for(var i = 0; i < 4; i++){
         var author = document.createElement("span");
         author.innerHTML = news.articles[i].author;
         author.className = "author";
@@ -173,6 +177,7 @@ function scienceNews(news){
         description.setAttribute("href",  news.articles[i].url);
         description.setAttribute("target", "_blank");
         description.style.marginTop = "10px";
+        description.style.fontWeight = "bold";
 
         news_root.appendChild(description);
         news_root.appendChild(author);
@@ -189,7 +194,7 @@ function technologyNews(news){
    title.style.textAlign = "center";
 
    news_root.appendChild(title);
-  for(var i = 0; i < 3; i++){
+  for(var i = 0; i < 4; i++){
        var author = document.createElement("span");
        author.innerHTML = news.articles[i].author;
        author.className = "author";
@@ -208,6 +213,7 @@ function technologyNews(news){
        description.setAttribute("href",  news.articles[i].url);
        description.setAttribute("target", "_blank");
        description.style.marginTop = "10px";
+       description.style.fontWeight = "bold";
 
        news_root.appendChild(description);
        news_root.appendChild(author);

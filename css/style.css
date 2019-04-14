@@ -18,7 +18,7 @@ header{
 .business_news, .entertaiment_news, .health_news, .science_news, .technology_news{
     box-shadow: 0px 0px 7px 0px;
     margin-top: 10px;
-    padding: 0px 15px;
+    padding: 10px 15px;
 }
 .news{
     font-size: 18px;
@@ -33,6 +33,7 @@ header{
     font-size: 16px;
     font-weight: lighter;
     color: gray;
+    padding-bottom: 10px;
 }
 .table_curse{
     margin-top: 10px;
