@@ -1,5 +1,4 @@
 window.addEventListener("load", init);
-//window.addEventListener("load", Request_curse);
 function init(){
     var apikey = "b426b1761d53466c9ca16514d9a564d8";
     var category = ["business", "entertainment", "health", "science", "technology"];
@@ -15,6 +14,8 @@ function init(){
     for (var i = 0; i < category.length; i++) {
         Request(category[i], apikey, callbackFunction[i].news);
     }
+    Request_curse();
+    show_currency()
 }
 
 function Request(category, apikey, callback){
@@ -256,7 +257,7 @@ function technologyNews(news){
    }
 }
 /* new features */
-/*
+
 function Request_curse() {
     var xhr = new XMLHttpRequest();
   
@@ -287,6 +288,12 @@ function Request_curse() {
 
         var sale_eur = document.querySelector(".sale_eur");
         sale_eur.innerHTML = data[1].sale;
+
+        var buy_rub = document.querySelector(".buy_rub");
+        buy_rub.innerHTML = data[2].buy;
+
+        var sale_rub = document.querySelector(".sale_rub");
+        sale_rub.innerHTML = data[2].sale;
       }
     };
 }
@@ -300,4 +307,3 @@ function show_currency(){
         table_currency.setAttribute("class", "table_curse d-none");
     }
 }
-*/
