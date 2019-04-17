@@ -42,3 +42,56 @@ header{
 .btn_wrapper{
     margin-top: 10px;
 }
+
+.list{
+    height: 120px;
+}
+.list .list_item{
+    list-style: none;
+    padding: 10px 15px;
+    border-radius: 25%;
+    background-color: cadetblue;
+}
+.list .list_item:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+.list .list_item .list_link{
+    font-size: 25px;
+    color: #000000;
+}
+.buttonUP a i{
+    font-size: 50px;
+    position: fixed;
+    top: 550px;
+    right: 0;
+    margin-right: 50px;
+    animation: radial-pulse 1s infinite;
+    border-radius: 50%;
+}
+@keyframes radial-pulse {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);
+    }
+   
+    100% {
+      box-shadow: 0 0 0 40px rgba(0, 0, 0, 0);
+    }
+}
+
+
+footer{
+    margin-top: 25px;
+    height: 100px;
+}
+
+footer ul li{
+    list-style: none;
+}
+
+footer ul li:first-child{
+    font-size: 20px;
+}

@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <header>
+        <header id="header">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4">
@@ -19,39 +19,70 @@
                             <img src="img/NEW_Star_News_Group_Logo_RGB.png" alt="logo" class="logo_img">
                         </div>
                     </div>
-                    <div class="col-xl-4">
-                        
+                    <div class="col-xl-4 d-flex justify-content-center align-items-center">
+                            <div class="contact_us">
+                                    <ul>
+                                        <li>Contact Us:</li>
+                                        <li><i class="fas fa-envelope"></i> Example@mailto.com</li>
+                                        <li><i class="fas fa-paper-plane"></i> Telegram 000-555</li>
+                                        <li><i class="fab fa-facebook"></i> Page_facebook.com</li>
+                                    </ul>
+                            </div>
                     </div>
-                    <div class="col-xl-4">
-                       
+                    <div class="col-xl-4 d-flex justify-content-center align-items-center">
+                            <div class="contact_us d-flex justify-content-end">
+                                    <ul>
+                                        <li>Tell about us in your social</li>
+                                        <li><i class="fas fa-envelope"></i> Example@mailto.com</li>
+                                        <li><i class="fas fa-paper-plane"></i> Telegram 000-555</li>
+                                        <li><i class="fab fa-facebook"></i> Page_facebook.com</li>
+                                    </ul>
+                                </div>
                     </div>
                 </div>
             </div>
         </header>
+        <div class="container navigation">
+            <ul class="list d-flex justify-content-around align-items-center">
+                <li class="list_item">
+                    <a href="#business" class="list_link">Business</a>
+                </li>
+                <li class="list_item">
+                    <a href="#entertaiment" class="list_link">Entertaiment</a>
+                </li>
+                <li class="list_item">
+                    <a href="#health" class="list_link">Health</a>
+                </li>
+                <li class="list_item">
+                    <a href="#science" class="list_link">Science</a>
+                </li>
+                <li class="list_item">
+                    <a href="#tech" class="list_link">Technology</a>
+                </li>
+            </ul>
+        </div>
         <main>
             <div class="container-fluid main_news">
                 <div class="row">
-                    <div class="col-xl-3">
-                       <!-- Random news -->
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="business_news d-flex flex-column">
+                    <div class="col-xl-7">
+                        <div class="business_news d-flex flex-column" id="business">
 
                         </div>
-                        <div class="entertaiment_news  d-flex flex-column">
+                        <div class="entertaiment_news  d-flex flex-column" id="entertaiment">
 
                         </div>
-                        <div class="health_news  d-flex flex-column">
+                        <div class="health_news  d-flex flex-column" id="health">
 
                         </div>
-                        <div class="science_news  d-flex flex-column">
+                        <div class="science_news  d-flex flex-column" id="science">
 
                         </div>
-                        <div class="technology_news  d-flex flex-column">
+                        <div class="technology_news  d-flex flex-column" id="tech">
 
                         </div>
                     </div>
-                    <div class="col-xl-3 d-flex flex-column align-items-center">
+                    <div class="col-xl-5 d-flex flex-column align-items-center">
+                        <!--
                         <div class="btn_wrapper">
                             <button class="currency" onclick="show_currency()">Currencies</button>
                         </div>
@@ -72,6 +103,10 @@
                                 <td class="sale_eur"></td>
                             </tr>
                         </table>
+                        -->
+                        <div class="buttonUP">
+                            <a href="#header"><i class="fas fa-chevron-circle-up"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,18 +114,28 @@
         
         <footer>
            <div class="container">
-               <div class="col-xl-3">
-
+               <div class="row">
+                    <div class="col-xl-3">
+                            <div class="contact_us">
+                                <ul>
+                                    <li>Contact Us:</li>
+                                    <li><i class="fas fa-envelope"></i> Example@mailto.com</li>
+                                    <li><i class="fas fa-paper-plane"></i> Telegram 000-555</li>
+                                    <li><i class="fab fa-facebook"></i> Page_facebook.com</li>
+                                </ul>
+                            </div>
+                       </div>
+                       <div class="col-xl-5">
+                            <div class="contact_us d-flex justify-content-end">
+                                <ul>
+                                    <li>Tell about us in your social</li>
+                                    <li><i class="fas fa-envelope"></i> Example@mailto.com</li>
+                                    <li><i class="fas fa-paper-plane"></i> Telegram 000-555</li>
+                                    <li><i class="fab fa-facebook"></i> Page_facebook.com</li>
+                                </ul>
+                            </div>
+                     </div>
                </div>
-               <div class="col-xl-3">
-                   
-                </div>
-                <div class="col-xl-3">
-                   
-               </div>
-               <div class="col-xl-3">
-                   
-                </div>
            </div>
         </footer>
     

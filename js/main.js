@@ -1,5 +1,5 @@
 window.addEventListener("load", init);
-window.addEventListener("load", Request_curse);
+//window.addEventListener("load", Request_curse);
 function init(){
     var apikey = "b426b1761d53466c9ca16514d9a564d8";
     var category = ["business", "entertainment", "health", "science", "technology"];
@@ -50,6 +50,12 @@ function businessNews(news){
 
     news_root.appendChild(title);
    for(var i = 0; i < 4; i++){
+
+        var img = document.createElement("img");
+        img.setAttribute("src",  news.articles[i].urlToImage);
+        img.style.margin = "20px 0px 5px 0px";
+        img.style.height = "350px";
+
         var author = document.createElement("span");
         author.innerHTML = news.articles[i].author;
         author.className = "author";
@@ -71,6 +77,7 @@ function businessNews(news){
         description.style.marginTop = "10px";
         description.style.fontWeight = "bold";
 
+        news_root.appendChild(img);
         news_root.appendChild(description);
         news_root.appendChild(author);
         news_root.appendChild(time);
@@ -87,6 +94,12 @@ function entertaimentNews(news){
 
     news_root.appendChild(title);
    for(var i = 0; i < 4; i++){
+
+        var img = document.createElement("img");
+        img.setAttribute("src",  news.articles[i].urlToImage);
+        img.style.margin = "20px 0px 5px 0px";
+        img.style.height = "350px";
+
         var author = document.createElement("span");
         author.innerHTML = news.articles[i].author;
         author.className = "author";
@@ -107,6 +120,7 @@ function entertaimentNews(news){
         description.style.marginTop = "10px";
         description.style.fontWeight = "bold";
 
+        news_root.appendChild(img); 
         news_root.appendChild(description);
         news_root.appendChild(author);
         news_root.appendChild(time);
@@ -123,6 +137,12 @@ function healthNews(news){
 
     news_root.appendChild(title);
    for(var i = 0; i < 4; i++){
+
+        var img = document.createElement("img");
+        img.setAttribute("src",  news.articles[i].urlToImage);
+        img.style.margin = "20px 0px 5px 0px";
+        img.style.height = "350px";
+
         var author = document.createElement("span");
         author.innerHTML = news.articles[i].author;
         author.className = "author";
@@ -143,9 +163,10 @@ function healthNews(news){
         description.style.marginTop = "10px";
         description.style.fontWeight = "bold";
 
+        news_root.appendChild(img);
         news_root.appendChild(description);
         news_root.appendChild(author);
-        news_root.appendChild(time);    
+        news_root.appendChild(time);   
     }
 }
 
@@ -159,6 +180,12 @@ function scienceNews(news){
 
     news_root.appendChild(title);
    for(var i = 0; i < 4; i++){
+
+        var img = document.createElement("img");
+        img.setAttribute("src",  news.articles[i].urlToImage);
+        img.style.margin = "20px 0px 5px 0px";
+        img.style.height = "350px";
+
         var author = document.createElement("span");
         author.innerHTML = news.articles[i].author;
         author.className = "author";
@@ -179,6 +206,7 @@ function scienceNews(news){
         description.style.marginTop = "10px";
         description.style.fontWeight = "bold";
 
+        news_root.appendChild(img);
         news_root.appendChild(description);
         news_root.appendChild(author);
         news_root.appendChild(time);
@@ -195,6 +223,12 @@ function technologyNews(news){
 
    news_root.appendChild(title);
   for(var i = 0; i < 4; i++){
+
+        var img = document.createElement("img");
+        img.setAttribute("src",  news.articles[i].urlToImage);
+        img.style.margin = "20px 0px 5px 0px";
+        img.style.height = "350px";
+
        var author = document.createElement("span");
        author.innerHTML = news.articles[i].author;
        author.className = "author";
@@ -215,13 +249,14 @@ function technologyNews(news){
        description.style.marginTop = "10px";
        description.style.fontWeight = "bold";
 
+       news_root.appendChild(img);
        news_root.appendChild(description);
        news_root.appendChild(author);
        news_root.appendChild(time);
    }
 }
 /* new features */
-
+/*
 function Request_curse() {
     var xhr = new XMLHttpRequest();
   
@@ -265,7 +300,4 @@ function show_currency(){
         table_currency.setAttribute("class", "table_curse d-none");
     }
 }
-
-
-
-
+*/
