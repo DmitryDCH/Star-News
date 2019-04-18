@@ -159,3 +159,18 @@ table {
     th:first-child, td:first-child {
     text-align: left;
     }
+
+    .row_time_1{
+        min-height: 80px;
+        width: 100%;
+        background-color: aquamarine;
+    }
+    .data_day{
+        text-align: center;
+        font-size: 23px;
+        font-weight: bold;
+    }
+    .date, .max_degrees, .min_degrees{
+        font-weight: bold;
+        font-size: 18px;
+    }

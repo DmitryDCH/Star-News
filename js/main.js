@@ -15,7 +15,7 @@ function init(){
         Request(category[i], apikey, callbackFunction[i].news);
     }
     Request_curse();
-    //show_currency();
+    Request_weather();
 }
 
 function Request(category, apikey, callback){
@@ -275,7 +275,7 @@ function Request_curse(){
         console.log(errStatus + ": " + errText);
       } else {
         var data = JSON.parse(xhr.responseText);
-        console.log(data);
+        //console.log(data);
 
         var buy_usd = document.querySelector(".buy_usd");
         buy_usd.innerHTML = data[0].buy;
@@ -301,5 +301,64 @@ function Request_curse(){
 
 /* weather */
 
+function Request_weather(){
+    var xhr = new XMLHttpRequest();
+  
+    var url = "http://api.openweathermap.org/data/2.5/forecast?id=695594&APPID=4f2331b24742b87ee96385337c44b6f6";
+    xhr.open("GET", url, true);
+  
+    xhr.send();
+  
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState != 4) return;
+  
+      if (xhr.status != 200) {
+        var errStatus = xhr.status;
+        var errText = xhr.statusText;
+        console.log(errStatus + ": " + errText);
+      } else {
+        var data = JSON.parse(xhr.responseText);
+        console.log(data);
+
+        var morning = document.querySelector(".row_time_1");
+        var day = document.querySelector(".row_time_2");
+        var evening = document.querySelector(".row_time_3");
+
+      var data_day =  document.querySelector(".data_day");
+      data_day.innerHTML = data.city.name + data.city.country;
+
+      var date = document.querySelector(".date");
+      date.innerHTML =  data.list[0].dt_txt;
+
+      var img = document.querySelector(".icon");
+      img.setAttribute("src", `https://openweathermap.org/img/w/${data['list'][0]['weather'][0]['icon']}.png`);
+      
+      function temperatureConverter(valNum, selector_inner) {
+        valNum = parseFloat(valNum);
+        document.querySelector(selector_inner).innerHTML = valNum-273.5;
+      }
+      var max_deg = document.querySelector(".max_degrees");
+      var max_temp = Math.round(data.list[0].main.temp_max-273);
+      max_deg.innerHTML = "Max temp - " + max_temp + "C";
+
+      var min_deg = document.querySelector(".min_degrees");
+      var min_temp = Math.round(data.list[0].main.temp_min-273);
+      min_deg.innerHTML = "Min temp - " + min_temp + "C";   
+      }
+    };
+}
 
 
+
+
+
+/* 
+
+Kelvin to Farenheit
+
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputCelcius").innerHTML=valNum-273.15;
+}
+
+*/
