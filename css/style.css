@@ -38,6 +38,7 @@ header{
 .table_curse{
     margin-top: 10px;
     text-align: center;
+    margin-bottom: 25px;
 }
 .btn_wrapper{
     margin-top: 10px;
@@ -50,13 +51,11 @@ header{
     list-style: none;
     padding: 10px 15px;
     border-radius: 25%;
-    background-color: cadetblue;
 }
 .list .list_item:hover {
-    background-color: #2EE59D;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
     transform: translateY(-7px);
+    transition: 0.5s;
   }
 
 .list .list_item .list_link{
@@ -96,45 +95,7 @@ footer ul li:first-child{
     font-size: 20px;
 }
 
-.weather {
-	-moz-box-shadow:inset 0px -3px 7px 0px #29bbff;
-	-webkit-box-shadow:inset 0px -3px 7px 0px #29bbff;
-	box-shadow:inset 0px -3px 7px 0px #29bbff;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa));
-	background:-moz-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
-	background:-webkit-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
-	background:-o-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
-	background:-ms-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
-	background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
-	background-color:#2dabf9;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-	border-radius:3px;
-	border:1px solid #0b0e07;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:9px 23px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #263666;
-}
-.weather:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
-	background:-moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
-	background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
-	background:-o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
-	background:-ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
-	background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
-	background-color:#0688fa;
-}
-.weather:active {
-	position:relative;
-	top:1px;
-}
+
 
 .button1 {
 	-moz-box-shadow:inset 0px 1px 0px 0px #fff6af;

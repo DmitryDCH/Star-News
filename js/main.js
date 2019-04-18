@@ -15,7 +15,7 @@ function init(){
         Request(category[i], apikey, callbackFunction[i].news);
     }
     Request_curse();
-    show_currency()
+    //show_currency();
 }
 
 function Request(category, apikey, callback){
@@ -258,7 +258,7 @@ function technologyNews(news){
 }
 /* new features */
 
-function Request_curse() {
+function Request_curse(){
     var xhr = new XMLHttpRequest();
   
     var url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
@@ -298,12 +298,8 @@ function Request_curse() {
     };
 }
 
-function show_currency(){
-    var table_currency = document.querySelector(".table_curse");
-    var currency_classes = table_currency.getAttribute("class");
-    if(currency_classes == "table_curse d-none"){
-        table_currency.setAttribute("class", "table_curse d-block");
-    }else{
-        table_currency.setAttribute("class", "table_curse d-none");
-    }
-}
+
+/* weather */
+
+
+
