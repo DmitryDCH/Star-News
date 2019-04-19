@@ -320,45 +320,38 @@ function Request_weather(){
         var data = JSON.parse(xhr.responseText);
         console.log(data);
 
-        var morning = document.querySelector(".row_time_1");
-        var day = document.querySelector(".row_time_2");
-        var evening = document.querySelector(".row_time_3");
+        for (var i = 0; i < 40; i+=8){
+          var weather_root = document.querySelector(".weather");
+        
+        var data_day = document.createElement("p");
+        data_day.setAttribute("class", "data_day");
+        data_day.innerHTML = data.city.name + " " + data.city.country;
 
-      var data_day =  document.querySelector(".data_day");
-      data_day.innerHTML = data.city.name + data.city.country;
+        var time = document.createElement("p");
+        time.setAttribute("class", "day");
+        time.innerHTML =  data.list[i].dt_txt;
 
-      var date = document.querySelector(".date");
-      date.innerHTML =  data.list[0].dt_txt;
+        var icon = document.createElement("img");
+        icon.setAttribute("src", `https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png`);
+        icon.setAttribute("alt", "icon");
+        icon.style.display = "block";
+        icon.style.margin = "0 auto";
 
-      var img = document.querySelector(".icon");
-      img.setAttribute("src", `https://openweathermap.org/img/w/${data['list'][0]['weather'][0]['icon']}.png`);
-      
-      function temperatureConverter(valNum, selector_inner) {
-        valNum = parseFloat(valNum);
-        document.querySelector(selector_inner).innerHTML = valNum-273.5;
-      }
-      var max_deg = document.querySelector(".max_degrees");
-      var max_temp = Math.round(data.list[0].main.temp_max-273);
-      max_deg.innerHTML = "Max temp - " + max_temp + "C";
+        var max = document.createElement("p");
+        max.setAttribute("class", "min_degrees");
+        max.innerHTML = ("Max temperature: " + Math.round(data.list[i].main.temp_max-273) + "°C");
 
-      var min_deg = document.querySelector(".min_degrees");
-      var min_temp = Math.round(data.list[0].main.temp_min-273);
-      min_deg.innerHTML = "Min temp - " + min_temp + "C";   
+        var min = document.createElement("p");
+        min.setAttribute("class", "min_degrees");
+        min.innerHTML = ("Min temperature: " + Math.round(data.list[i].main.temp_min-273) + "°C");
+        min.style.borderBottom = "2px solid black";
+
+        weather_root.appendChild(data_day);
+        weather_root.appendChild(time);
+        weather_root.appendChild(icon);
+        weather_root.appendChild(max);
+        weather_root.append(min);
+        }
       }
     };
 }
-
-
-
-
-
-/* 
-
-Kelvin to Farenheit
-
-function temperatureConverter(valNum) {
-  valNum = parseFloat(valNum);
-  document.getElementById("outputCelcius").innerHTML=valNum-273.15;
-}
-
-*/
