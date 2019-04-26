@@ -137,7 +137,7 @@ function healthNews(news){
     title.style.textAlign = "center";
 
     news_root.appendChild(title);
-   for(var i = 0; i < 4; i++){
+   for(var i = 0; i < 2; i++){
 
         var img = document.createElement("img");
         img.setAttribute("src",  news.articles[i].urlToImage);
@@ -223,38 +223,50 @@ function technologyNews(news){
    title.style.textAlign = "center";
 
    news_root.appendChild(title);
-  for(var i = 0; i < 4; i++){
 
-        var img = document.createElement("img");
-        img.setAttribute("src",  news.articles[i].urlToImage);
-        img.style.margin = "20px 0px 5px 0px";
-        img.style.height = "350px";
+   /* work interval/timeout */
+   var pre_loader = document.createElement("div");
+   pre_loader.setAttribute("class", "loader");
+   news_root.appendChild(pre_loader);
+  /* end */
 
-       var author = document.createElement("span");
-       author.innerHTML = news.articles[i].author;
-       author.className = "author";
+  news_root.addEventListener("onload",  setTimeout(function(){
+    for(var i = 0; i < 4; i++){
 
-       if(news.articles[i].author == null){
-           author.innerHTML = "(author anonim)";
-       }
+      var img = document.createElement("img");
+      img.setAttribute("src",  news.articles[i].urlToImage);
+      img.style.margin = "20px 0px 5px 0px";
+      img.style.height = "350px";
 
-       var time = document.createElement("span");
-       time.innerHTML = news.articles[i].publishedAt;
-       time.className = "time";
+     var author = document.createElement("span");
+     author.innerHTML = news.articles[i].author;
+     author.className = "author";
 
-       var description = document.createElement("a");
-       description.innerHTML =  news.articles[i].title;
-       description.className = "news";
-       description.setAttribute("href",  news.articles[i].url);
-       description.setAttribute("target", "_blank");
-       description.style.marginTop = "10px";
-       description.style.fontWeight = "bold";
+     if(news.articles[i].author == null){
+         author.innerHTML = "(author anonim)";
+     }
 
-       news_root.appendChild(img);
-       news_root.appendChild(description);
-       news_root.appendChild(author);
-       news_root.appendChild(time);
-   }
+     var time = document.createElement("span");
+     time.innerHTML = news.articles[i].publishedAt;
+     time.className = "time";
+
+     var description = document.createElement("a");
+     description.innerHTML =  news.articles[i].title;
+     description.className = "news";
+     description.setAttribute("href",  news.articles[i].url);
+     description.setAttribute("target", "_blank");
+     description.style.marginTop = "10px";
+     description.style.fontWeight = "bold";
+    
+     
+     news_root.appendChild(img);
+     news_root.appendChild(description);
+     news_root.appendChild(author);
+     news_root.appendChild(time);
+
+     pre_loader.style.display = "none";
+ }
+  }, 10000));
 }
 /* new features */
 
@@ -318,10 +330,10 @@ function Request_weather(){
         console.log(errStatus + ": " + errText);
       } else {
         var data = JSON.parse(xhr.responseText);
-        //console.log(data);
+        console.log(data);
 
-        for (var i = 0; i < 40; i+=8){
-          var weather_root = document.querySelector(".weather");
+        for (var i = 0; i < 5; i++){
+        var weather_root = document.querySelector(".weather");
         
         var data_day = document.createElement("p");
         data_day.setAttribute("class", "data_day");
@@ -329,7 +341,11 @@ function Request_weather(){
 
         var time = document.createElement("p");
         time.setAttribute("class", "day");
-        time.innerHTML =  data.list[i].dt_txt;
+        time.innerHTML = "Date: " + data.list[i].dt_txt;
+        time.style.borderTop = "2px solid black";
+        time.style.borderTopRightRadius = "15%";
+        time.style.borderTopLeftRadius = "15%";
+        time.style.paddingBottom = "50px";
 
         var icon = document.createElement("img");
         icon.setAttribute("src", `https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png`);
@@ -337,22 +353,44 @@ function Request_weather(){
         icon.style.display = "block";
         icon.style.margin = "0 auto";
 
+        var description_icon = document.createElement("p");
+        description_icon.innerHTML = data.list[i].weather[0].description;
+        description_icon.style.textAlign = "center";
+        description_icon.style.fontWeight = "bold";
+
+
         var max = document.createElement("p");
         max.setAttribute("class", "min_degrees");
         max.innerHTML = ("Max temperature: " + Math.round(data.list[i].main.temp_max-273) + "°C");
+        max.style.color = "red";
 
         var min = document.createElement("p");
         min.setAttribute("class", "min_degrees");
         min.innerHTML = ("Min temperature: " + Math.round(data.list[i].main.temp_min-273) + "°C");
         min.style.borderBottom = "2px solid black";
-        min.style.marginBottom = "20px";
+        min.style.borderBottomLeftRadius = "15%";
+        min.style.borderBottomRightRadius = "15%";
+        min.style.paddingBottom = "50px";
+        min.style.color = "blue";
 
         weather_root.appendChild(data_day);
         weather_root.appendChild(time);
         weather_root.appendChild(icon);
+        weather_root.appendChild(description_icon);
         weather_root.appendChild(max);
         weather_root.append(min);
         }
       }
     };
 }
+
+/* UI features (button up)*/
+var button_up = document.querySelector(".buttonUP a i");
+
+window.addEventListener("scroll", function(){
+  if(window.scrollY > 150){
+    button_up.style.display = "block";
+  } else{
+    button_up.style.display = "none";
+  }
+});
