@@ -70,6 +70,7 @@ header{
     margin-right: 50px;
     animation: radial-pulse 1s infinite;
     border-radius: 50%;
+    display: none;
 }
 @keyframes radial-pulse {
     0% {

@@ -318,7 +318,7 @@ function Request_weather(){
         console.log(errStatus + ": " + errText);
       } else {
         var data = JSON.parse(xhr.responseText);
-        console.log(data);
+        //console.log(data);
 
         for (var i = 0; i < 40; i+=8){
           var weather_root = document.querySelector(".weather");
@@ -345,6 +345,7 @@ function Request_weather(){
         min.setAttribute("class", "min_degrees");
         min.innerHTML = ("Min temperature: " + Math.round(data.list[i].main.temp_min-273) + "°C");
         min.style.borderBottom = "2px solid black";
+        min.style.marginBottom = "20px";
 
         weather_root.appendChild(data_day);
         weather_root.appendChild(time);
