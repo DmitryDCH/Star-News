@@ -82,6 +82,9 @@ function businessNews(news){
         news_root.appendChild(description);
         news_root.appendChild(author);
         news_root.appendChild(time);
+
+        var loader = document.querySelector(".business_news .loader");
+        loader.style.display = "none";
     }
 }
 
@@ -125,6 +128,9 @@ function entertaimentNews(news){
         news_root.appendChild(description);
         news_root.appendChild(author);
         news_root.appendChild(time);
+
+        var loader = document.querySelector(".entertaiment_news .loader");
+        loader.style.display = "none";
    }
 }
 
@@ -167,7 +173,10 @@ function healthNews(news){
         news_root.appendChild(img);
         news_root.appendChild(description);
         news_root.appendChild(author);
-        news_root.appendChild(time);   
+        news_root.appendChild(time);
+        
+        var loader = document.querySelector(".health_news .loader");
+        loader.style.display = "none";
     }
 }
 
@@ -211,6 +220,9 @@ function scienceNews(news){
         news_root.appendChild(description);
         news_root.appendChild(author);
         news_root.appendChild(time);
+
+        var loader = document.querySelector(".science_news .loader");
+        loader.style.display = "none";
     }
 }
 
@@ -256,6 +268,9 @@ function technologyNews(news){
      news_root.appendChild(description);
      news_root.appendChild(author);
      news_root.appendChild(time);
+
+     var loader = document.querySelector(".technology_news .loader");
+     loader.style.display = "none";
  }
 }
 /* new features */
