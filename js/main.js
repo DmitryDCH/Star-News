@@ -224,13 +224,6 @@ function technologyNews(news){
 
    news_root.appendChild(title);
 
-   /* work interval/timeout */
-   var pre_loader = document.createElement("div");
-   pre_loader.setAttribute("class", "loader");
-   news_root.appendChild(pre_loader);
-  /* end */
-
-  news_root.addEventListener("onload",  setTimeout(function(){
     for(var i = 0; i < 4; i++){
 
       var img = document.createElement("img");
@@ -263,10 +256,7 @@ function technologyNews(news){
      news_root.appendChild(description);
      news_root.appendChild(author);
      news_root.appendChild(time);
-
-     pre_loader.style.display = "none";
  }
-  }, 10000));
 }
 /* new features */
 
