@@ -40,7 +40,6 @@ function Request(category, apikey, callback){
       }
     };
 }
-
 function businessNews(news){
 
     var news_root = document.querySelector(".business_news");
@@ -71,8 +70,11 @@ function businessNews(news){
         time.className = "time";
     
         var description = document.createElement("a");
-        description.innerHTML =  news.articles[i].title;
+        description.innerHTML =   slice_str(news.articles[i].title, 83);
         description.className = "news";
+
+
+        
         description.setAttribute("href",  news.articles[i].url);
         description.setAttribute("target", "_blank");
         description.style.marginTop = "10px";
@@ -117,7 +119,10 @@ function entertaimentNews(news){
         time.className = "time";
 
         var description = document.createElement("a");
-        description.innerHTML =  news.articles[i].title;
+
+        description.innerHTML =   slice_str(news.articles[i].title, 83);
+
+        //description.innerHTML =  news.articles[i].title;
         description.className = "news";
         description.setAttribute("href",  news.articles[i].url);
         description.setAttribute("target", "_blank");
@@ -163,7 +168,9 @@ function healthNews(news){
         time.className = "time";
 
         var description = document.createElement("a");
-        description.innerHTML =  news.articles[i].title;
+         
+        description.innerHTML =   slice_str(news.articles[i].title, 83);
+        //description.innerHTML =  news.articles[i].title;
         description.className = "news";
         description.setAttribute("href",  news.articles[i].url);
         description.setAttribute("target", "_blank");
@@ -209,7 +216,8 @@ function scienceNews(news){
         time.className = "time";
 
         var description = document.createElement("a");
-        description.innerHTML =  news.articles[i].title;
+        description.innerHTML =   slice_str(news.articles[i].title, 83);
+        //description.innerHTML =  news.articles[i].title;
         description.className = "news";
         description.setAttribute("href",  news.articles[i].url);
         description.setAttribute("target", "_blank");
@@ -256,7 +264,9 @@ function technologyNews(news){
      time.className = "time";
 
      var description = document.createElement("a");
-     description.innerHTML =  news.articles[i].title;
+
+     description.innerHTML =   slice_str(news.articles[i].title, 83);
+     //description.innerHTML =  news.articles[i].title;
      description.className = "news";
      description.setAttribute("href",  news.articles[i].url);
      description.setAttribute("target", "_blank");
@@ -399,3 +409,11 @@ window.addEventListener("scroll", function(){
     button_up.style.display = "none";
   }
 });
+
+
+function slice_str(string, max_length){
+  if(string.length > max_length){
+    return string.slice(0, max_length - 3) + "...";
+  }
+  return string;
+}
